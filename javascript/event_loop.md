@@ -93,9 +93,8 @@ Web APIs timer 5초뒤 작업이 끝나면 태스크큐로 옮겨집니다.
 > [출처 : Philip Roberts](https://youtu.be/8aGhZQkoFbQ)
 
 ## Reference
-::: tip 참조
-- [MDN web docs[Event loop]](https://developer.mozilla.org/ko/docs/Web/JavaScript/EventLoop)
-- [Sessionstack blog](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)
-- [Philip Roberts - Talk on the Event loop](https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html) 30분짜리 훌륭한 비디오.
-- [Philip Roberts의 자바스크립트 엔진 시각화 도구: Loupe](http://latentflip.com/loupe)
-:::
+> 참조  
+    - [MDN web docs[Event loop]](https://developer.mozilla.org/ko/docs/Web/JavaScript/EventLoop)  
+    - [Sessionstack blog](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)  
+    - [Philip Roberts - Talk on the Event loop](https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html) 30분짜리 훌륭한 비디오.  
+    - [Philip Roberts의 자바스크립트 엔진 시각화 도구: Loupe](http://latentflip.com/loupe)
