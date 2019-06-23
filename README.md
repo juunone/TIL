@@ -1,7 +1,7 @@
 # Today I Learned
 
 오늘 새로 배운 것을 기록합니다.
-[Wabi](https://github.com/DeveloperYB/TIL) 에게 자극받아 조금씩 정리하고자 한다.
+규칙적이지 못하지만 꾸준하려고 노력합니다.
 
 ## 작성 규칙
 
