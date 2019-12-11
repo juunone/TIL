@@ -12,7 +12,12 @@
 해당 커밋이 필요한경우가 있을 수도 있다.
 
 이때 `{feature/branch} git rebase develop` 커맨드라인을
-입력하면 기존에 a커밋마지막에서 따온 base가 마지막 피처가 머지된 b커밋 기준으로 base 기준이 변경된다.  
+입력하면 기존에 a커밋마지막에서 따온 base가 마지막 피처가 머지된 b커밋 기준으로 base 기준이 변경된다.
+`develop`에는 feature 커밋이 병합된상태가 아니므로
+`develop`으로 체크아웃한후 feature를 fast-forward merge 해준다.
+
+**이때 feature의 커밋들은 remote에 올라간 상태가 아니여야한다.**
+**이미 올라간 상태라면 `rebase` 보단 그냥 `develop merge` 추천한다.**
 
 이렇게되면 커밋히스토리도 더 간단하게 가져갈수있어서, 추후에
 다른 사람이 커밋히스토리를 확인 할 경우 명료하게 파악이 가능하다.  
