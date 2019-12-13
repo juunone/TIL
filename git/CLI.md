@@ -25,4 +25,9 @@ git checkout -t {branch} //리모트 브랜치 로컬에 생성후 체크아웃
 
 git log --all --decorate --oneline --graph //adog 라는 은어로 함축되는 깃 히스토리 그래프 보기
 git show {commit.id} //해당 커밋 id 히스토리 보기
+
+git tag {tag} //깃 태그 생성 로컬
+git push origin {master} --tags //깃 태그 리모트 푸시
+git push :{tag} //태그 리모트 태그 삭제
+git tag -d {tag} //태그 로컬 삭제
 ```
