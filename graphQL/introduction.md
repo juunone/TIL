@@ -23,3 +23,46 @@ query getHero{
 
 gql의 동작방식이나 rest API와 비교는
 위에 참조한 문서에 그림과 함께 자세히 설명되어있다.
+
+## pagination?
+gql에서 현재 서비스에서 사용하고있는 페이지네이션 쿼리는 아래와 같다.
+`allQuestionsPage`에서 나온 `after`의 gid를 가지고  
+`allQuestions`에 `after` 파라미터에 넣어주면 해당 gid의 다음
+엣지 노드들이 response로 온다.
+
+gql에서는 정말 페이지네이션이 불편하게되어있는거 같다.
+(사용법이 미숙할지도..)
+이런점에선 restful이 더 간결하지 않나 생각이든다.
+
+```
+//pageSize = 한페이지에 나올 총 컨텐츠 갯수
+//startPage = 시작될 페이지 (e.g, 페이지사이즈 = 5이며, 총 컨텐츠가 10개일경우 총 2개의 페이지가 나옴.)
+
+query allQuestionsPage{
+  allQuestionsPagination(pageSize:5 startPage:1 ){
+    lastPage{
+    	pageNumber
+      after
+    }
+    pages{
+    	pageNumber
+      after
+    }
+}
+```
+
+```
+//first = 처음에 나올 컨텐츠 갯수
+//after = 해당 gid 다음에 있는 컨텐츠들이 결과값으로 나옴.
+
+query allQuestions{
+  allQuestions(first:2 after:{gid}){
+    edges{
+      cursor
+      node{
+        content
+			}
+    }
+  }
+}
+```
