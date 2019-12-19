@@ -24,6 +24,20 @@ query getHero{
 gql의 동작방식이나 rest API와 비교는
 위에 참조한 문서에 그림과 함께 자세히 설명되어있다.
 
+## schema/type?
+```code
+type Character {
+  name: String!
+  appersIn: [Episode!]!
+}
+```
+- 오브젝트 타입 : Character
+- 필드 : name, appearsIn
+- 스칼라 타입 : String, ID, Int 등
+- 느낌표(!) : 필수 값을 의미(non-nullable)
+- 대괄호([, ]) : 배열을 의미(array)
+참조:카카오테크 gql
+
 ## pagination?
 gql에서 현재 서비스에서 사용하고있는 페이지네이션 쿼리는 아래와 같다.
 `allQuestionsPage`에서 나온 `after`의 gid를 가지고  
