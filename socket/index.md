@@ -106,6 +106,20 @@ server.listen(port, () => console.log(`Listening on port ${port}`))
 `io.sockets.to(socket.id).emit('receive data', newData)` 는 현재 연결된 id에만 'receive data'를 실행한다.  
 `socket.broadcast.emit('receive data', reduceTargetData)` 는 현재 연결된 id를 제외한 다른 모든 id들에 'receive data'를 실행한다.
 
+## socket-context.js
+
+context-api 를 이용해서 접속시 한번씩만 클라이언트에 소켓을 연결해준다.
+아래와 같이 3001번 서버와 `socketIOClient` 메소드를 통해 연결된다.
+
+```js
+import React from 'react'
+import socketIOClient from "socket.io-client";
+
+const socket = socketIOClient('localhost:3001');
+
+export const SocketContext = React.createContext(socket);
+``` 
+
 ---
 
 ## heartbeat?
