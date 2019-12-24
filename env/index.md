@@ -26,6 +26,8 @@ Dotenv is a zero-dependency module that loads environment   variables from a .en
 경우가 많다.
 또한 index.html 에서는 변수 앞뒤에 `%` 키워드를 붙여 사용 가능하다.
 
+> CRA(create-react-app) 의 경우 자체적으로 dotenv를 가지고 만든 REACT_APP 변수가 있기때문에 해당 변수가 포함되어야한다. e.g. REACT_APP_MODE=test
+
 ```js
 fetch(
 `https://apiserver.${process.env.REACT_APP_BACKEND_API_URL}.demo.com/${url}`,
