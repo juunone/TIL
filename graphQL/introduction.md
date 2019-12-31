@@ -80,3 +80,15 @@ query allQuestions{
   }
 }
 ```
+
+## etc..
+
+`gql`의 클라이언트 `apollo`를 사용시에 노드들에는 반드시 중첩되지 않는 id가 필요하다.  
+nested하게 들어가는 쿼리도 마찬가지로 필수이다.
+현재 사용중인 쿼리에서는 `id` , `hashid` 로 사용중이다.  
+각 노드에 id가 없거나, 해당 id가 중첩되면  
+
+[stackoverflow gql error 1](https://github.com/apollographql/react-apollo/issues/1656)
+[stackoverflow gql error 2](https://stackoverflow.com/questions/44403930/error-network-error-error-writing-result-to-store-for-query-apollo-client)
+
+위 와 같은 에러로그를 보여준다.
