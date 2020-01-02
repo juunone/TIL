@@ -5,10 +5,10 @@
 (chrome 브라우저에서만 적용 가능하다.)
 
 ```css
-max-height: 92px;
+max-height: 92px; //최고 높이를 지정해주므로서 문단이 형성
 text-overflow: ellipsis;
 overflow: hidden;
--webkit-line-clamp: 4;
+-webkit-line-clamp: 4; //몇번째 줄부터 점자처리 할지 결정
 -webkit-box-orient: vertical;
 word-wrap: break-word;
 display: -webkit-box;
