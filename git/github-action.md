@@ -1,7 +1,7 @@
 ## Github-action
 
-깃헙액션을 사용한 경험에 대해 작성해보고자 한다.
-일단 `aws amplify` 로 기존에 프론트를 배포하고있었다.
+깃헙액션을 사용한 경험에 대해 작성해보고자 한다.  
+일단 `aws amplify` 로 기존에 프론트를 배포하고있었다.  
 amplify CLI를 통해서 수동배포를 하고있었는데 이 부분을
 깃헙액션을 통해 CI/CD 를 구축해보고자 한다.
 
@@ -57,3 +57,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ap-northeast-2
 ```
+
+## 참조
+
+- [github-action docs](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions)
+- [github-action market](https://github.com/marketplace?type=actions)
+- [blog.aliencube.org](https://blog.aliencube.org/ko/2019/12/13/publishing-static-website-to-azure-blob-storage-via-github-actions/?fbclid=IwAR3WYkF5_oSs0tYoMRiVIbTmk9bNl4wu-a3Cn8sfPtP6l-IYIPvYEzHj5-Y)
