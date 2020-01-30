@@ -15,3 +15,14 @@
 
 - DNS Server
 Router DNS Server에 조회해서 없다면, Root DNS부터 조회를 하여 결과를 가져옵니다.
+
+- Server와 TCP Socket 열기
+Server의 IP주소로 TCP Socket을 열어 Server와 통신 준비를 진행합니다.
+
+- Server에 HTTP로 Resource 요청하기
+TCP Socket을 통해 HTTP Protocol로 원하는 Resource를 요청합니다.
+
+- Browser Page Rendering
+Server에서 받은 Resource를 Browser에서 Rendering하는 작업이 필요합니다.
+
+![dns](https://user-images.githubusercontent.com/58495926/73413445-0d218780-434f-11ea-9471-d10666579222.png)
