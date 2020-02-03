@@ -50,3 +50,116 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 [oceanic-iterm-theme](https://drive.google.com/file/d/1ZYNEBnN1WwQ6u4BxCZJmszpKD1qUkDfD/view?usp=sharing)를 내려받고, 파일내부에 스크립트를 실행해줍니다.
 그 후 iterm `preferences > colors > color presets`에
 `oceanic` 테마가 추가된걸 확인할 수 있습니다.
+
+## powerline font 설치
+
+[powerline fonts](https://github.com/powerline/fonts) 에 들어가서 해당 깃 repo clone 한뒤 쉘스크립트를
+실행해주면 다양한 powerline font가 설치된다.
+powerline font를 사용하는 이유는 터미널에서 폰트의 깨짐 방지를 위해 사용한다.
+
+## oh-my-zsh 플러그인 설치
+
+- [autojump](https://github.com/wting/autojump)
+- [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [syntax highlighter](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+나는 현재 이 세가지를 사용중이다.
+
+### autojump
+
+autojump는 이전에 진입했던 디렉토리를 `j {디렉토리}`를 커맨드로
+원하는 디렉토리로 한번에 점프할 수 있는 플러그인이다.
+
+```sh
+brew install autojump
+```
+
+### autosuggestions
+
+history 를 저장해놨다가 명령어를 추천해주는 플러그인이다.
+기억에 의존하면 쉽게 잊을수 있는데 해당 플러그인은 비슷한 철자를 가지면 제시를 해주므로서 사용하기 편하다. 또한 오른쪽 방향키를 누르면 자동완성도 가능하다.
+
+```sh
+cd ~/.oh-my-zsh/custom/plugins
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+```
+
+### syntax highlighter
+명령어가 유효하면 색상이 변경된다.
+```sh
+brew install zsh-autosuggestions
+```
+
+## oh-my-zsh theme 설치
+현재 사용하는 `powerlevel9k` 테마이고, 이걸 이용해서 터미널을 더 풍부하게 커스터마이징할 수 있다.
+```sh
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+
+## install LSD (LSDeluxe)
+파일트리나 현재 폴더에 대한 터미널을 좀더 명확하고 규격화되서 잘보여주는 라이브러리다.
+
+[lsd github repository](https://github.com/Peltoche/lsd#installation)
+
+```sh
+brew install lsd
+```
+
+.zshrc 에 아래와 같이 `alias`를 추가해준다.
+```
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+```
+
+## install gotop
+cpu 및 램 그리고 배터리 등 현재 컴퓨터에 대한 프로세싱 모니터링을 한눈에 볼 수 있다.
+
+[gotop github repository](https://github.com/cjbassi/gotop)
+
+```sh
+brew tap cjbassi/gotop
+brew install gotop
+```
+
+## install neofetch and lolcat
+현재 사용중인 OS 및 컴퓨터 정보를 한눈에 이쁘게 확인할 수 있다.
+
+[neofetch github repository](https://github.com/dylanaraps/neofetch)
+```sh
+brew install neofetch
+```
+
+[lolcat github repository](https://github.com/busyloop/lolcat)
+```sh
+brew install lolcat
+```
+
+아래와 같이 명령어를 실행해보자.
+```sh
+neofetch | lolcat
+```
+
+## .zshrc 설정
+zsh의 config 파일인 `.zshrc`를 설정하면서
+터미널에 색상을 변경한다거나 플러그인을 추가한다거나
+하는 기능들을 덧붙일 수 있다. 
+아래와 같이 간단하게 몇가지 설정할수 있고 이외에도 많은
+설정들이 존재한다.
+
+xterm number로 프롬포트 엘리먼트 색상도 변경가능하다.
+[prompt color chart](https://jonasjacek.github.io/colors/)
+
+```sh
+code ~/.zshrc
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user virtualenv rbenv dir vcs) #터미널 왼쪽에 위치할 EL
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status) #터미널 오른쪽에 위치할 EL
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND="039" #home EL의 백그라운드 컬러
+
+POWERLEVEL9K_DIR_HOME_FOREGROUND="black" #home EL의 포그라운드 컬러
+```
