@@ -114,6 +114,16 @@ alias lla='ls -la'
 alias lt='ls --tree'
 ```
 
+## install fzf
+
+커맨드라인 퍼지파인더 라이브러리다.
+
+[fzf github](https://github.com/junegunn/fzf)
+
+```sh
+brew install fzf
+```
+
 ## install gotop
 cpu 및 램 그리고 배터리 등 현재 컴퓨터에 대한 프로세싱 모니터링을 한눈에 볼 수 있다.
 
