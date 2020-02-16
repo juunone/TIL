@@ -116,7 +116,8 @@ alias lt='ls --tree'
 
 ## install fzf
 
-커맨드라인 퍼지파인더 라이브러리다.
+대충 커맨드라인에 쓰면 삭제하고 찾고등을
+쉽게 할수 있는 커맨드라인 퍼지파인더 라이브러리다.
 
 [fzf github](https://github.com/junegunn/fzf)
 
