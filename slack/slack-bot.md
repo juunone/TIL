@@ -40,6 +40,32 @@ heroku ps:scale web=1 (서비스의 타입과 스케일)
 heroku open (로컬 띄우기)
 ```
 
+## RTM(Real-Time Messaging) API
+아래와 같이 `RTM API` 를 이용해서 리얼타임으로
+챗봇과 메세지를 주고받을 수 있게 구현 가능하다.
+
+`rtm.on`이라는 메소드로 슬랙에서 전달받은 객체 안에 텍스트를
+이용해 그에 알맞는 응답을 줄 수 있다.
+
+```js
+const config = require("dotenv").config().parsed;
+const { RTMClient } = require("@slack/client");
+const token = config.SLACK_BOT_TOKEN;
+const rtm = new RTMClient(token);
+
+rtm.on("message", async event => {
+  let text = event.text ? event.text : event.message.text;
+  const channel = event.channel;
+
+  if(text.icludes('주소'))
+  await rtm.sendMessage('서울시 강남구', channel);
+})
+
+(async () => {
+  await rtm.start();
+})();
+```
+
 ## 참고
 - https://github.com/slackapi/node-slack-sdk
 - https://asce-hyunseung.tistory.com/78
