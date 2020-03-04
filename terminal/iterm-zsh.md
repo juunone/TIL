@@ -153,6 +153,49 @@ brew install lolcat
 neofetch | lolcat
 ```
 
+## install cowsay
+키치하게 터미널에 동물 아스키코드로 표현가능한 라이브러리다.
+
+```sh
+brew install cowsay
+
+$ cowsay Hello World
+ _____________
+< Hello World >
+ -------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+## install fortune
+터미널 메세지를 포춘쿠키에담듯이 이쁘게 출력해준다.  
+`-f` 와 플래그사용하면 다른동물로 표현가능하며  
+`cowsay -l` 은 표현가능한 동물을 보여준다.
+
+```sh
+brew install fortune
+
+$ fortune | cowsay -f sheep
+ _________________________________________
+/ This night methinks is but the daylight \
+| sick.                                   |
+|                                         |
+| -- William Shakespeare, "The Merchant   |
+\ of Venice"                              /
+ -----------------------------------------
+  \
+   \
+       __     
+      UooU\.'@@@@@@`.
+      \__/(@@@@@@@@@@)
+           (@@@@@@@@)
+           `YY~~~~YY'
+            ||    ||
+```
+
 ## .zshrc 설정
 zsh의 config 파일인 `.zshrc`를 설정하면서
 터미널에 색상을 변경한다거나 플러그인을 추가한다거나
