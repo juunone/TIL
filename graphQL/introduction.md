@@ -81,6 +81,41 @@ query allQuestions{
 }
 ```
 
+## useQuery
+react 16.x 버전부터 지원하는 `hooks` 를 대비해서  
+`@apollo/react-hooks` 를 사용할 수 있다.
+
+```
+npm install @apollo/react-hooks
+```
+
+hooks에서만 사용할수 있으므로 함수형만 지원한다. 첫번째 파라미터로 쿼리를 보내고,  
+두번째 객체에 `variables`,`fetchPolicy`,`onCompleted` 등 필요한 옵션들을 사용할 수 있다.  
+결과값으로 `loading,error,data` 등으로 에러 및 로딩에 대한 핸들링도 가능하고,  
+결과값도 물론 받아서 사용할 수있다.  
+참조 : [apollo react hooks](https://www.apollographql.com/docs/react/api/react-hooks/)
+
+```js
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+
+const GET_GREETING = gql`
+  query getGreeting($language: String!) {
+    greeting(language: $language) {
+      message
+    }
+  }
+`;
+
+function Hello() {
+  const { loading, error, data } = useQuery(GET_GREETING, {
+    variables: { language: 'english' },
+  });
+  if (loading) return <p>Loading ...</p>;
+  return <h1>Hello {data.greeting.message}!</h1>;
+}
+```
+
 ## etc..
 
 `gql`의 클라이언트 `apollo`를 사용시에 노드들에는 반드시 중첩되지 않는 id가 필요하다.  
