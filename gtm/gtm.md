@@ -44,3 +44,51 @@ Google 태그 관리자를 이용하는 경우에는 프로젝트에 이러한 �
         |-- Trigger
         |-- Variables
 ```
+
+## 데이터레이어
+
+태그나 트리거외에 웹사이트에서 GTM을 통해 데이터를 전달할때 자바스크립트 객체를 의미한다.  
+태그를 구성할때 트리거의 필터나 변수에 담아서 태그에서 외부채널에 데이터를 전달할때도 사용된다.
+
+[Developer guide](https://developers.google.com/tag-manager/devguide#events)
+
+### 잘못된 방법
+```html
+<!-- Google Tag Manager -->
+...
+<!-- End Google Tag Manager -->
+<script>
+  dataLayer = [{
+    'pageCategory': 'signup',
+    'visitorType': 'high-value'
+  }];
+</script>
+```
+
+### 올바른 방법
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer = [{
+    'pageCategory': 'signup',
+    'visitorType': 'high-value'
+  }];
+</script>
+<!-- Google Tag Manager -->
+...
+<!-- End Google Tag Manager -->
+```
+> 태그매니저를 소스에 삽입하기전 dataLayer 변수를 초기화하고 그후에 import 해주는 방법을 추천한다.
+
+
+### 데이터 추가방법  
+아래와 같이 `dataLayer.push` 메소드로 필요한 데이터를 밀어 넣고 태그에서 사용할 수 있다.
+```js
+dataLayer.push({'event': 'event_name'});
+```
+
+
+
+
+
+
