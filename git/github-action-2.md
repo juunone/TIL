@@ -55,10 +55,62 @@ env:
 ![slack noti](https://user-images.githubusercontent.com/35126809/79085365-390bb100-7d73-11ea-89f7-dd13dd139619.png)
 참조: https://github.com/marketplace/actions/slack-notify
 
+## Action yml
 
+아래와 같이 yml에서 `if` 키에 들어가있는 조건은 github branch가 `develop`일 때만 해당 스텝을 실행한다.  
+또한 `${{ secrets.AWS_ACCESS_KEY_ID }}` 같은 변수는 깃헙 레포의 `secrets` 메뉴에서 등록된 변수이다.  
+보안이 필요한 키 혹은 웹훅 url같은건 `secrets` 메뉴에서 변수를 등록해 사용하는게 좋다.
 
+```yml
+- name: Configure amplify prod
+  if: contains(github.ref, 'develop')  
+  uses: ambientlight/amplify-cli-action@0.2.1
+  with:
+    amplify_cli_version: '3.17.0'
+    amplify_env: dev
+    amplify_command: configure
+  env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_REGION: ap-northeast-2
 
+- name: Build and amplify cli publish to cloud front to prod
+  if: contains(github.ref, 'develop')  
+  uses: ambientlight/amplify-cli-action@0.2.1
+  with:
+    frontend: javascript
+    framework: 'react'
+    amplify_cli_version: '3.17.0'
+    amplify_env: dev
+    amplify_command: publish
+    amplify_arguments: '-c'
+    build_command: 'yarn build'
+  env:
+    CI: ""
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_REGION: ap-northeast-2
+```
 
+## Debug
+
+아래와 같이 `github` 객체를 조회해서 필요한 정보들을 슬랙에 노티를 보내는데 활용할수도있고,  
+`job` 의 상태들을 불러와 각 상태에 대한 정보도 구분이 가능하다.
+
+```yml
+steps:
+- uses: actions/checkout@v1
+
+- name: Dump GitHub context
+  env:
+    GITHUB_CONTEXT: ${{ toJson(github) }}
+  run: echo "$GITHUB_CONTEXT"
+
+- name: Dump job context
+  env:
+    JOB_CONTEXT: ${{ toJson(job) }}
+  run: echo "$JOB_CONTEXT"  
+```
 
 
 
