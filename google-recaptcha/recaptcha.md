@@ -1,13 +1,20 @@
-## Google recaptcha
+## Google reCAPTCHA
 
-깃헙액션을 사용한 경험에 대해 작성해보고자 한다.  
-일단 `aws amplify` 로 기존에 프론트를 배포하고있었다.  
-amplify CLI를 통해서 수동배포를 하고있었는데 이 부분을
-깃헙액션을 통해 CI/CD 를 구축해보고자 한다.
+로봇을 이용한 회원가입 및 로그인 방지를 위해 구글 리캡차를
+도입한 경험을 공유한다.
 
-[amplify-cli-action](https://github.com/marketplace/actions/amplify-cli-action) 이라는
-깃헙 액션 워크플로우 템플릿을 base로 yml을 작성했다.
+회원가입같은 보안이슈가 동반되는 페이지는 무조건적으로라도  
+인증을 통해 가입을 가능하게 만드는것이 최소한의 조건이라고 개인적으로 생각한다.
+리캡차를 도입한다고해도 100% 로봇을 통한 가입을 제한한다고 볼수 없지만  
+최소한의 비용으로 하나의 인증을 추가할 수 있다면 리캡차도 그중 하나의 방법이라고 생각한다.
 
-깃헙액션 탭에 들어가면 기본적으로 많이쓰이는 템플릿을 제공하는데 그외에도 [github-action marketplace](https://github.com/marketplace/actions/) 에 가면 유저들이 만들어 놓은 많은 템플릿도 제공하고있다. 이중 자신이 필요한 CI/CD 베이스를 가져와 사용할 수 있다.
+**또한 리캡차는 대중적인 언어들은 모두 지원한다.**
 
-## what is recaptcha?
+
+### 참조
+- [Google reCAPTCHA](https://www.google.com/recaptcha/intro/v3.html)
+- [reCAPTCHA Help](https://support.google.com/recaptcha/?hl=en)
+
+## What is reCAPTCHA?
+
+[What is reCAPTCHA](https://developers.google.com/recaptcha/?hl=ko)를 보면 동영상으로 친절하게 리캡차에 대한 설명을 해준다.
