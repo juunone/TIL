@@ -30,7 +30,7 @@
 
 ## Settings
 
-가입하고 세팅을 하게되면
+가입하고 세팅에 들어가면
 - keys
 - domains
 
@@ -38,4 +38,11 @@
 먼저 구글캡차를 이용하기 위해서는 발급받은 키를 사용해서 모듈을 호출해서 사용해야하며,
 서버사이드 처리없이 클라이언트에서만 처리할경우 `사이트 키`만 사용하면 된다.
 
+
+- 발급된 키를 확인할 수 있는 영역  
 ![setting](https://user-images.githubusercontent.com/58495926/81540489-b2b3b080-93ac-11ea-904c-73edb6365454.jpg)
+
+
+- 등록된 도메인에 한해서 구글캡차를 사용할 수 있음  
+참고로 `localhost`, `127.0.0.1` 을 등록하면 로컬 개발환경에서도 테스트 할 수 있다.
+![setting2](https://user-images.githubusercontent.com/58495926/81541089-8fd5cc00-93ad-11ea-8f19-d24c79d84bee.jpg)
