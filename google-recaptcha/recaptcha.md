@@ -56,6 +56,11 @@
 - 사이트키는 env에 넣어두고 사용했다.
 - `hl`은 [reCAPTCHA 언어코드](https://developers.google.com/recaptcha/docs/language)에서 사용중인 언어 property로 기존에 i18n에서 사용중인 랭기지코드를 가져왔다.
 - `theme` 는 총 2가지를 제공해주며, `light` , `dark` 를 사용해 각 웹사이트 테마에 맞게 사용할 수 있다. 
+- 콜백함수 종류
+  - onChange={val => {}} 리캡차 체크박스가 체크된 시점 콜백 함수
+  - onExpired={exp => {}} 체크박스 체크후에 일정시간이 지난후 리캡차가 만료된 시점 콜백 함수
+  - onErrored={err => {}} 리캡차에 오류 (일반적으로 네트워크 연결)가 발생하여 연결이 복원 될 때까지 계속할 수 없을 때 실행되는 콜백 함수 이름
+  - 리캡차에 대한 validation을 클라이언트에서 가지고 있을 경우 보통 `onChange`, `onExpired`에서 처리해준다.
 
 > 다크 테마 리캡차 이미지 참고  
 ![theme img](https://user-images.githubusercontent.com/58495926/81629834-15ee2300-943f-11ea-94d9-551fff662fe5.png)
