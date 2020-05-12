@@ -1,10 +1,9 @@
 ## Google reCAPTCHA
 
-로봇을 이용한 회원가입 및 로그인 방지를 위해 구글 리캡차를
-도입한 경험을 공유한다.
+로봇을 이용한 회원가입 및 로그인 방지를 위해 구글리캡차를 도입한 경험을 공유한다.
 
 회원가입같은 보안이슈가 동반되는 페이지는 무조건적으로라도  
-인증을 통해 가입을 가능하게 만드는것이 최소한의 조건이라고 개인적으로 생각한다.
+인증을 통해 가입을 가능하게 만드는것이 최소한의 조건이라고 개인적으로 생각한다.  
 리캡차를 도입한다고해도 100% 로봇을 통한 가입을 제한한다고 볼수 없지만  
 최소한의 비용으로 하나의 인증을 추가할 수 있다면 리캡차도 그중 하나의 방법이라고 생각한다.
 
@@ -46,3 +45,27 @@
 - 등록된 도메인에 한해서 구글캡차를 사용할 수 있음  
 참고로 `localhost`, `127.0.0.1` 을 등록하면 로컬 개발환경에서도 테스트 할 수 있다.
 ![setting2](https://user-images.githubusercontent.com/58495926/81541089-8fd5cc00-93ad-11ea-8f19-d24c79d84bee.jpg)
+
+## How to use it?
+
+내가 사용한 라이브러리로는 위에서 언급한 `react-google-recaptcha`를 사용했다.  
+주단위 다운로드도 약 16만회에 달하고, 컴포넌트 단위로 부분적으로 적용할 수 있어서  
+현재 로그인/회원가입에만 적용이 필요했던 현재 상황과 일치했다.  
+물론 친절한 README는 덤.
+
+- 사이트키는 env에 넣어두고 사용했다.
+- `hl`은 [reCAPTCHA 언어코드](https://developers.google.com/recaptcha/docs/language)에서 사용중인 언어 property로 기존에 i18n에서 사용중인 랭기지코드를 가져왔다.
+
+```js
+import ReCAPTCHA from "react-google-recaptcha";
+
+<ReCAPTCHA
+  sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+  onChange={val => {}}
+  onExpired={exp => {}}
+  onErrored={err => {}}
+  style={{ margin: "0 auto 36px" }}
+  hl={i18n.language.split("-")[0]}
+  theme="dark"
+/>
+```
