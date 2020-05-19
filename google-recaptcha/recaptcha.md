@@ -79,3 +79,6 @@ import ReCAPTCHA from "react-google-recaptcha";
   theme="dark"
 />
 ```
+
+react에서는 `onChange` 함수 콜백을 통해 회원가입 버튼 활성화를 시켜주는 보통의 방법으로, 클라이언트에서 제어가 가능하다.  
+반대로 `onExpired`에서 회원가입 만료시 재 인증하도록 요구하는 절차를 포함시킬 수 있다.
