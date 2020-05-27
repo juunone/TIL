@@ -105,7 +105,23 @@ GTM의 어드민에서 미리보기 기능을 사용하게되면, GTM이 설치�
 ![미리보기](https://user-images.githubusercontent.com/58495926/77878981-875d8200-7294-11ea-8a49-348e7ea11e28.png)
 ![미리보기 데이터](https://user-images.githubusercontent.com/58495926/77879110-afe57c00-7294-11ea-85c9-eb00f9e41f2a.png)
 
+### Hotjar 추가
 
+핫자라는 히트맵이나 레코딩을 제공해주는 툴을 추가로 태깅했다.  
+구글 태그매니저 에서 태그 추가 영역에 보면 추천태그에 `Hotjar Tracking Code`라는 타이틀로 존재한다.
+먼저 Hotja에 가입하고 발급받은 `Hotjar Site ID` 아이디만 넣어주면 init 할 수 있다.  
+트리거로는 `All pages 페이지뷰`를 넣고 전체페이지 레코딩이 가능하게 해주면 기본 세팅은 끝난다.
+
+![hotjar gtm](https://user-images.githubusercontent.com/58495926/82853909-ee6c7f80-9f41-11ea-87d8-b4a30c3f9a74.png)
+
+- Hotjar 사이트 아이디는 `https://insights.hotjar.com/sites/0000000/dashboard`의 url에서 7자리 숫자에서 확일할 수 있고,  
+  대시보드 오른쪽 상단의 Tracking 버튼을 통해서도 확인 가능하다.
+
+
+hotjar sdk가 정상적으로 삽입된 웹사이트에서는 대시보드 상단의 Tracking 버튼을 통해 확인 해볼 수 있다.  
+`Verify installation`이라는 버튼을 클릭하면 자신의 웹사이트에 아래 그림과 같은 뱃지가 붙으면 정상적으로 완료된 것이다.
+
+![hotjar verify](https://user-images.githubusercontent.com/58495926/82854025-3b505600-9f42-11ea-8969-ce1b31edfef8.png)
 
 
 
