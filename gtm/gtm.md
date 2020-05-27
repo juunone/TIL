@@ -123,7 +123,23 @@ hotjar sdk가 정상적으로 삽입된 웹사이트에서는 대시보드 상�
 
 ![hotjar verify](https://user-images.githubusercontent.com/58495926/82854025-3b505600-9f42-11ea-8969-ce1b31edfef8.png)
 
+### Hotjar 커스텀 태깅
 
+hotjar도 페이스북이나 다른 채널처럼 추가로 원하는 태깅을 할 수 있다.  
+[Hotjar docs](https://help.hotjar.com/hc/en-us/categories/360002046454)에서 보면 
+특정 트리거나 이벤트를 통해 레코딩을 시작할 수 있는데 아래와 같이 트리거라는 이벤트명을 걸고 태깅을 하면  
+해당 태깅이 발생했을 시점부터 레코딩이 시작된다.
+하지만 한가지 문제는 `This feature is only available on the Plus and Business plan.` 에서만 가능하다.  
+즉 돈내라는 소리... 결제하고 써도 충분히 좋은 툴이니 가치가 있다고 생각한다.
+
+```js
+<script>
+hj('trigger', 'ViewStep',{
+  user_name:{{유저 닉네임}},
+  user_email:{{유저 이메일}},
+});
+</script>
+```
 
 
 
