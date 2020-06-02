@@ -41,6 +41,8 @@ IMP 전역객체에는 5개의 메소드가 존재하는데.
 
 ```js
 // IMP.request_pay(param, callback) 호출
+// m_redirect_url 같은경우는 모바일 결제 완료시 리다이렉트 되는 url을 명시할 수 있다.
+
 IMP.request_pay({ // param
   pg: "inicis",
   pay_method: "card",
@@ -51,7 +53,8 @@ IMP.request_pay({ // param
   buyer_name: "홍길동",
   buyer_tel: "010-4242-4242",
   buyer_addr: "서울특별시 강남구 신사동",
-  buyer_postcode: "01181"
+  buyer_postcode: "01181",
+  m_redirect_url: 'www.test.com'
 }, rsp => { // callback
   if (rsp.success) {
       ...,
