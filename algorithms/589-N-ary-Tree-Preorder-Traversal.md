@@ -1,8 +1,8 @@
-# 590. N-ary Tree Postorder Traversal
+# 589. N-ary Tree Preorder Traversal
 
-[Go to leetcode](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)
+[Go to leetcode](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)
 
-Given an n-ary tree, return the postorder traversal of its nodes' values.
+Given an n-ary tree, return the preorder traversal of its nodes' values.
 
 Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).
 
@@ -16,7 +16,7 @@ Example 1:
 
 ```
 Input: root = [1,null,3,2,4,null,5,6]
-Output: [5,6,3,2,4,1]
+Output: [1,3,5,6,2,4]
 ```
 
 Example 2:
@@ -25,7 +25,7 @@ Example 2:
 
 ```
 Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
-Output: [2,6,14,11,7,3,12,8,4,13,9,10,5,1]
+Output: [1,2,3,6,7,11,14,4,8,12,5,9,13,10]
 ```
  
 Note:
@@ -38,7 +38,7 @@ Note:
 ```js
 /**
  * // Definition for a Node.
- * function Node(val,children) {
+ * function Node(val, children) {
  *    this.val = val;
  *    this.children = children;
  * };
@@ -48,16 +48,17 @@ Note:
  * @param {Node} root
  * @return {number[]}
  */
-var postorder = function(root) {
-    let res = [];
-    const search = (node) => {
-      if(!node) return;
-      for(let child of node.children){
-        search(child);
-      }
-      res.push(node.val)
+var preorder = function(root) {
+  let res = [];
+  const search = (node) => {
+    if(!node) return;
+    res.push(node.val);
+    for(let child of node.children){
+      search(child);
     }
-    search(root);
-    return res;
+  }
+  search(root);
+  
+  return res;
 };
 ```
