@@ -105,6 +105,10 @@ Web APIs timer 5초뒤 작업이 끝나면 태스크큐로 옮겨집니다.
   - queue: 자료구조 큐, FIFO 선입선출
 - 콜스택이 비게되면 이벤트루프가 콜백큐에 있는 함수들을 하나씩 콜스택에 쌓아주는데 이행동을 '틱'이라고함.
 
+### 순서
+
+micortask queue(promise) > animation frame(requestAnimationFrame) > task queue(setTimeout)
+
 ## Reference
 > 참조  
     - [MDN web docs[Event loop]](https://developer.mozilla.org/ko/docs/Web/JavaScript/EventLoop)  
