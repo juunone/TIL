@@ -1,6 +1,6 @@
 ## git CLI
 
-```
+```sh
 git status //깃 상태
 git diff //변경점 확인
 
@@ -30,4 +30,14 @@ git tag {tag} //깃 태그 생성 로컬
 git push origin {master} --tags //깃 태그 리모트 푸시
 git push :{tag} //태그 리모트 태그 삭제
 git tag -d {tag} //태그 로컬 삭제
+```
+
+### git v2.2.30 >==
+
+다양한 역할 수행하던 git checkout 커맨드가 git swtich , git restore 로 분리됨.
+```sh
+git switch {branch} //해당 브랜치로 스위치 
+git switch -C {branch} //해당 브랜치 생성하면서 스위치 
+
+git restore {file.name} //작업중인 파일 복원 e.g. git checkout -- {file.name} 와 동일
 ```
