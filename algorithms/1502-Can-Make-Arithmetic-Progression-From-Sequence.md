@@ -62,3 +62,4 @@ var canMakeArithmeticProgression = function(arr) {
     return res;
 };
 ```
+
